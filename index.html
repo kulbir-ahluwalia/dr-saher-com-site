@@ -9,6 +9,19 @@
 <meta property="og:description" content="Physician (MBBS, GMCH Chandigarh) · Clinical pharmacology research: PCSK9 inhibitors, pharmacovigilance, AI in clinical pharmacology.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://dr-saher.com/">
+<!-- ENH-v1 -->
+<link rel="canonical" href="https://dr-saher.com/">
+<meta name="theme-color" content="#10293f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1720" media="(prefers-color-scheme: dark)">
+<meta name="author" content="Dr. Saher Ahluwalia">
+<meta property="og:site_name" content="Dr. Saher Ahluwalia">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dr. Saher Ahluwalia · Physician &amp; Clinical Researcher">
+<meta name="twitter:description" content="Physician (MBBS, GMCH Chandigarh) · Clinical pharmacology &amp; drug-safety research.">
+<meta name="twitter:image" content="https://dr-saher.com/assets/dr-saher.jpg">
 <meta property="og:image" content="https://dr-saher.com/assets/dr-saher.jpg">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
@@ -158,9 +171,48 @@
     header { background: #fff; }
     body { font-size: 12.5px; }
   }
+
+/* ===== ENH-v1 enhancements ===== */
+:root { --shadow: rgba(16,41,63,.14); --card: #fff; }
+html[data-theme="dark"] {
+  --navy:#8fd3ff; --teal:#4fd6c9; --ink:#dbe6ee; --muted:#93a6b3;
+  --line:#22333f; --bg:#0b1720; --bg-soft:#111f2b; --shadow: rgba(0,0,0,.5); --card:#111f2b;
+}
+html[data-theme="dark"] .badge-journal{background:#16283a;color:#8fd3ff;}
+html[data-theme="dark"] .badge-oa{background:#12301f;color:#5fd39a;}
+html[data-theme="dark"] .badge-review{background:#33260f;color:#e2b061;}
+html[data-theme="dark"] .highlight{background:#10241f;border-color:#1d4038;}
+html[data-theme="dark"] img.portrait{border-color:#1b2c39;}
+body{transition:background .25s ease,color .25s ease;}
+a:focus-visible,button:focus-visible,.btn:focus-visible,.pub-links a:focus-visible{
+  outline:3px solid var(--teal); outline-offset:3px; border-radius:5px;}
+.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;
+  padding:10px 16px;border-radius:0 0 8px 0;z-index:100;font-weight:600;}
+.skip:focus{left:0;text-decoration:none;}
+.site-nav a.nl.active{color:var(--teal);}
+.site-nav a.nl.active::after{content:"";display:block;height:2px;background:var(--teal);
+  margin-top:2px;border-radius:2px;}
+#themeBtn{background:none;border:1.5px solid var(--line);color:var(--ink);cursor:pointer;
+  font-size:15px;border-radius:7px;padding:6px 10px;margin-left:6px;line-height:1;}
+#themeBtn:hover{border-color:var(--teal);color:var(--teal);}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:9px;
+  padding:8px 14px;box-shadow:0 1px 5px var(--shadow);}
+.stat b{color:var(--teal);font-family:"Fraunces",Georgia,serif;font-size:20px;display:block;line-height:1.1;}
+.stat span{color:var(--muted);font-size:12.5px;}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.in{opacity:1;transform:none;}
+#toTop{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;
+  background:var(--navy);color:#fff;border:none;cursor:pointer;font-size:20px;
+  box-shadow:0 3px 14px var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:60;}
+#toTop.show{opacity:.92;pointer-events:auto;} #toTop:hover{background:var(--teal);}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;}}
+@media print{#toTop,#themeBtn,.skip{display:none;}}
+
 </style>
 </head>
 <body>
+<a class="skip" href="#about">Skip to content</a>
 
 <nav class="site-nav" aria-label="Section navigation">
   <div class="wrap">
@@ -171,6 +223,7 @@
     <a class="nl" href="#publications">Publications</a>
     <a class="nl" href="#research">Research</a>
     <a class="nl" href="#contact">Contact</a>
+    <button id="themeBtn" type="button" aria-label="Toggle dark mode">☾</button>
   </div>
 </nav>
 
@@ -189,6 +242,11 @@
           <a class="btn btn-ghost" href="mailto:saherahluwalia249@gmail.com">Email</a>
           <a class="btn btn-ghost" href="https://pubmed.ncbi.nlm.nih.gov/?term=Ahluwalia+Saher">PubMed</a>
         </div>
+        <div class="stats reveal">
+          <div class="stat"><b>5</b><span>peer-reviewed papers</span></div>
+          <div class="stat"><b>BPS 2024</b><span>oral presentation</span></div>
+          <div class="stat"><b>Rank 3/150</b><span>MBBS merit scholar</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -196,7 +254,7 @@
 
 <main class="wrap">
 
-  <section id="about">
+  <section id="about" class="reveal">
     <h2>About</h2>
     <div class="about-grid">
       <div class="about-lead">
@@ -223,7 +281,7 @@
     </div>
   </section>
 
-  <section id="education">
+  <section id="education" class="reveal">
     <h2>Education &amp; Training</h2>
     <div class="item">
       <div class="head"><strong>MBBS, Government Medical College and Hospital (GMCH), Chandigarh</strong><span class="when">2019 to present</span></div>
@@ -234,7 +292,7 @@
     </div>
   </section>
 
-  <section id="honors">
+  <section id="honors" class="reveal">
     <h2>Honors &amp; Awards</h2>
     <div class="item">
       <div class="head"><strong>Academic Merit Scholarship, GMCH Chandigarh</strong><span class="when">2021 to 2024</span></div>
@@ -254,7 +312,7 @@
     </div>
   </section>
 
-  <section id="publications">
+  <section id="publications" class="reveal">
     <h2>Publications</h2>
 
     <article class="pub-card">
@@ -351,7 +409,7 @@
 
   </section>
 
-  <section id="presentations">
+  <section id="presentations" class="reveal">
     <h2>Conference Presentations</h2>
     <div class="highlight">
       <div class="head"><strong>Oral Presentation (first author), Pharmacology 2024, British Pharmacological Society</strong></div>
@@ -367,7 +425,7 @@
     </div>
   </section>
 
-  <section id="research">
+  <section id="research" class="reveal">
     <h2>Research Experience</h2>
     <div class="item">
       <div class="head"><strong>Research Elective: Introduction to Systematic Reviews, GMCH Chandigarh</strong><span class="when">April 2023</span></div>
@@ -378,7 +436,7 @@
     </div>
   </section>
 
-  <section id="memberships">
+  <section id="memberships" class="reveal">
     <h2>Professional Memberships</h2>
     <div class="pills">
       <span class="pill">American Association of Clinical Endocrinology (2025 to present)</span>
@@ -387,7 +445,7 @@
     </div>
   </section>
 
-  <section id="leadership">
+  <section id="leadership" class="reveal">
     <h2>Leadership &amp; Community</h2>
     <div class="item">
       <div class="head"><strong>Editor-in-Chief, IAAH Newsletter, Chandigarh Branch</strong><span class="when">May to June 2024</span></div>
@@ -406,7 +464,7 @@
     </div>
   </section>
 
-  <section id="languages">
+  <section id="languages" class="reveal">
     <h2>Languages</h2>
     <div class="pills">
       <span class="pill">English (TOEFL 113: R30 L29 S27 W27)</span>
@@ -415,7 +473,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Contact</h2>
     <p>📧 <a href="mailto:saherahluwalia249@gmail.com">saherahluwalia249@gmail.com</a><br>
     📍 Chandigarh / Mohali, India</p>
@@ -427,6 +485,35 @@
   © 2026 Dr. Saher Ahluwalia · <a href="assets/Saher-Ahluwalia-CV.pdf">CV</a> ·
   <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Ahluwalia+Saher">PubMed</a>
 </footer>
+
+
+<!-- ENH-v1 -->
+<button id="toTop" aria-label="Back to top" title="Back to top">&uarr;</button>
+<script>
+(function(){
+  // theme: saved -> system
+  var root=document.documentElement, KEY="drsaher-theme";
+  function setT(t){ if(t==="dark"||t==="light"){root.setAttribute("data-theme",t);} else {root.removeAttribute("data-theme");} var b=document.getElementById("themeBtn"); if(b){var d=(t==="dark")||(t==null&&matchMedia("(prefers-color-scheme:dark)").matches); b.textContent=d?"\u2600\uFE0F":"\u1F319"; b.textContent=d?"\u2600":"\u263E"; b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");} }
+  try{ setT(localStorage.getItem(KEY)); }catch(e){ setT(null); }
+  var tb=document.getElementById("themeBtn");
+  if(tb){ tb.addEventListener("click",function(){ var cur=root.getAttribute("data-theme"); var sysDark=matchMedia("(prefers-color-scheme:dark)").matches; var next = cur? (cur==="dark"?"light":"dark") : (sysDark?"light":"dark"); try{localStorage.setItem(KEY,next);}catch(e){} setT(next); }); }
+  // scrollspy
+  var links=[].slice.call(document.querySelectorAll(".site-nav a.nl"));
+  var map={}; links.forEach(function(a){var id=a.getAttribute("href").slice(1); var s=document.getElementById(id); if(s)map[id]=a;});
+  var secs=Object.keys(map).map(function(id){return document.getElementById(id);});
+  if("IntersectionObserver" in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(en){ if(en.isIntersecting){ links.forEach(function(a){a.classList.remove("active");a.removeAttribute("aria-current");}); var a=map[en.target.id]; if(a){a.classList.add("active");a.setAttribute("aria-current","true");}}});},{rootMargin:"-45% 0px -50% 0px"});
+    secs.forEach(function(s){spy.observe(s);});
+    // reveal
+    var rev=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");rev.unobserve(en.target);}});},{rootMargin:"0px 0px -8% 0px"});
+    [].slice.call(document.querySelectorAll(".reveal")).forEach(function(el){rev.observe(el);});
+  } else { [].slice.call(document.querySelectorAll(".reveal")).forEach(function(el){el.classList.add("in");}); }
+  // back to top
+  var tt=document.getElementById("toTop");
+  addEventListener("scroll",function(){ if(scrollY>420){tt.classList.add("show");}else{tt.classList.remove("show");} },{passive:true});
+  tt.addEventListener("click",function(){scrollTo({top:0,behavior:"smooth"});});
+})();
+</script>
 
 </body>
 </html>
