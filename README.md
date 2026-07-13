@@ -4,7 +4,7 @@ Personal academic website for **Dr. Saher Ahluwalia, MBBS** live at https://dr-s
 
 ## Structure
 - `index.html` the whole site (single page, embedded CSS, no build step)
-- `assets/dr-saher.jpg` hero portrait (Cleveland Clinic photo)
+- `assets/dr-saher-cleveland-clinic-ohio-PHOTO-2025-08-25-20-39-27.jpg` the single site photo (hero; Cleveland Clinic main campus, Aug 2025)
 - `assets/Saher-Ahluwalia-CV.pdf` web CV (phone/street address deliberately omitted)
 - `cv-web.md` source for the web CV; regenerate with:
   `pandoc cv-web.md -o assets/Saher-Ahluwalia-CV.pdf --pdf-engine=xelatex`
