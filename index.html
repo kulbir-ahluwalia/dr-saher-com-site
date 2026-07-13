@@ -6,7 +6,7 @@
 <title>Dr. Saher Ahluwalia · Physician &amp; Clinical Researcher</title>
 <meta name="description" content="Dr. Saher Ahluwalia, MBBS (GMCH Chandigarh): physician and clinical pharmacology researcher. Publications in Expert Review of Clinical Pharmacology and Cureus; oral presentation at British Pharmacological Society Pharmacology 2024.">
 <meta property="og:title" content="Dr. Saher Ahluwalia · Physician &amp; Clinical Researcher">
-<meta property="og:description" content="Physician (MBBS, GMCH Chandigarh) · Clinical pharmacology research: PCSK9 inhibitors, pharmacovigilance, AI in clinical pharmacology.">
+<meta property="og:description" content="Physician (MBBS, GMCH Chandigarh) · Clinical pharmacology research: PCSK9 inhibitors and pharmacovigilance.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://dr-saher.com/">
 <!-- ENH-v1 -->
@@ -183,6 +183,13 @@ html[data-theme="dark"] .badge-oa{background:#12301f;color:#5fd39a;}
 html[data-theme="dark"] .badge-review{background:#33260f;color:#e2b061;}
 html[data-theme="dark"] .highlight{background:#10241f;border-color:#1d4038;}
 html[data-theme="dark"] img.portrait{border-color:#1b2c39;}
+:root{color-scheme:light;}
+html[data-theme="dark"]{color-scheme:dark;}
+html[data-theme="dark"] .site-nav{background:rgba(11,23,32,.92);}
+html[data-theme="dark"] .pub-card{background:var(--card);box-shadow:0 1px 6px rgba(0,0,0,.35);}
+html[data-theme="dark"] .btn-primary,html[data-theme="dark"] .btn-primary:hover,
+html[data-theme="dark"] .pub-links a.primary,html[data-theme="dark"] .pub-links a.primary:hover,
+html[data-theme="dark"] .monogram,html[data-theme="dark"] #toTop,html[data-theme="dark"] .skip{color:#0b1720;}
 body{transition:background .25s ease,color .25s ease;}
 a:focus-visible,button:focus-visible,.btn:focus-visible,.pub-links a:focus-visible{
   outline:3px solid var(--teal); outline-offset:3px; border-radius:5px;}
@@ -263,8 +270,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.pub-links a:focus-visib
         provider through the American Heart Association.</p>
         <p>My academic focus is clinical pharmacology and drug safety. Working with the pharmacology
         research group at GMCH, I have co-authored five peer-reviewed reviews and studies spanning
-        gastroenterology, transplant pulmonology, neuro-immunology, and the emerging role of artificial
-        intelligence in clinical pharmacology. My first-author project compared the risk of new-onset
+        gastroenterology, transplant pulmonology, neuro-immunology, and clinical pharmacology. My first-author project compared the risk of new-onset
         diabetes between PCSK9 inhibitors and statins, which I presented as an oral talk at the British
         Pharmacological Society's Pharmacology 2024 meeting in Harrogate, United Kingdom.</p>
         <p>Beyond research, I care deeply about community medicine. I have led menstrual-hygiene education
@@ -488,7 +494,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.pub-links a:focus-visib
   // theme: saved -> system
   var root=document.documentElement, KEY="drsaher-theme";
   function setT(t){ if(t==="dark"||t==="light"){root.setAttribute("data-theme",t);} else {root.removeAttribute("data-theme");} var b=document.getElementById("themeBtn"); if(b){var d=(t==="dark")||(t==null&&matchMedia("(prefers-color-scheme:dark)").matches); b.textContent=d?"\u2600\uFE0F":"\u1F319"; b.textContent=d?"\u2600":"\u263E"; b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");} }
-  try{ setT(localStorage.getItem(KEY)); }catch(e){ setT(null); }
+  try{ var s0=localStorage.getItem(KEY); setT(s0 || (matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : null)); }catch(e){ setT(null); }
   var tb=document.getElementById("themeBtn");
   if(tb){ tb.addEventListener("click",function(){ var cur=root.getAttribute("data-theme"); var sysDark=matchMedia("(prefers-color-scheme:dark)").matches; var next = cur? (cur==="dark"?"light":"dark") : (sysDark?"light":"dark"); try{localStorage.setItem(KEY,next);}catch(e){} setT(next); }); }
   // scrollspy
