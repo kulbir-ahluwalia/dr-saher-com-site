@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dr-saher.github.io/sitemap.xml
+Sitemap: https://dr-saher.com/sitemap.xml
